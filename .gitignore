@@ -1,0 +1,38 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# build output
+dist/
+.output/
+.vercel/
+.netlify/
+
+# astro
+.astro/
+
+# cloudflare / wrangler
+.wrangler/
+.dev.vars
+.dev.vars.*
+wrangler.toml.bak
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
