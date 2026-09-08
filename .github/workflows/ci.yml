@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    # Not just main — stacked PRs target the branch below them, and a filter
+    # of [main] gives every layer but the bottom one zero checks.
+    branches: [main, "claude/**"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secrets:
+    uses: shamwari-ai/.github/.github/workflows/reusable-gitleaks.yml@main
+
+  # Uncomment when package.json and check.mjs land. astro check covers types
+  # and MDX; check.mjs covers what it cannot — dead links and assets, colours
+  # with no base :root token, stray client JS, the size budget, and the
+  # language-discipline rules.
+  #
+  # build:
+  #   uses: shamwari-ai/.github/.github/workflows/reusable-ci-astro-npm.yml@main
