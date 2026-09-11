@@ -14,14 +14,14 @@ there is no existing code to lift out.
 
 The console needs three endpoints that `shamwari-core` does not serve yet:
 
-| Endpoint | Status |
-|---|---|
-| Key issuance | **missing** |
-| Key revocation | **missing** |
+| Endpoint                | Status      |
+| ----------------------- | ----------- |
+| Key issuance            | **missing** |
+| Key revocation          | **missing** |
 | Per-key usage breakdown | **missing** |
 
 `GET /rollup` and `POST /auth/verify` already exist and cover the rest.
-Per the split plan, these three should be added to Core *before* work here
+Per the split plan, these three should be added to Core _before_ work here
 starts, not discovered mid-build.
 
 ## Scope
