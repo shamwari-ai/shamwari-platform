@@ -2,11 +2,11 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, staging]
   pull_request:
     # Not just main — stacked PRs target the branch below them, and a filter
     # of [main] gives every layer but the bottom one zero checks.
-    branches: [main, "claude/**"]
+    branches: [main, staging, "claude/**"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
